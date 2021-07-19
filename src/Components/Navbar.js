@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import "../Styles/Navbar.scss";
-
 import logo from "../images/logo.svg";
 
 function Navbar() {
@@ -11,8 +10,8 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar" ref={navabr}>
-      <img src={logo} alt="" />
+    <div className="navbar wrapper" ref={navabr}>
+      <img src={logo} alt="" className="logo" />
       <ul className="navbar__links">
         <li className="navbar__link">
           <a href="/#">Pricing</a>
@@ -35,7 +34,7 @@ function Navbar() {
         <div className="line"></div>
       </div>
 
-      <button className="desktop">Get Started</button>
+      <button className="button desktop">get started</button>
     </div>
   );
 }
