@@ -10,7 +10,7 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar wrapper" ref={navabr}>
+    <div className="navbar" ref={navabr}>
       <img src={logo} alt="" className="logo" />
       <ul className="navbar__links">
         <li className="navbar__link">
