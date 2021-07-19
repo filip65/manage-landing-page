@@ -4,7 +4,6 @@ import Navbar from "./Components/Navbar";
 
 // images
 import graphsImage from "./images/illustration-intro.svg";
-import mobileBg from "./images/bg-tablet-pattern.svg";
 
 function App() {
   return (
