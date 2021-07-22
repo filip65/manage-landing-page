@@ -2,6 +2,7 @@
 
 .App {
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .desktop {
@@ -51,7 +52,7 @@ p {
     flex: 1;
 
     img {
-      width: 100%;
+      max-width: max-content;
     }
   }
 

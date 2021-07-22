@@ -2,6 +2,9 @@ import "./App.scss";
 
 import Navbar from "./Components/Navbar";
 
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 // images
 import graphsImage from "./images/illustration-intro.svg";
 
@@ -34,6 +37,7 @@ function App() {
               teams.
             </p>
           </div>
+
           <div className="differencies">
             <ol className="differencies__items">
               <li className="differencies__item">
@@ -75,6 +79,10 @@ function App() {
             </ol>
           </div>
         </div>
+
+        {/* <div className="reviews">
+          <h2>What they’ve said</h2>
+        </div> */}
       </div>
     </div>
   );
