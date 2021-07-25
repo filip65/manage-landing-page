@@ -2,13 +2,31 @@ import "./App.scss";
 
 import Navbar from "./Components/Navbar";
 
-// import Carousel from "react-multi-carousel";
+import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 // images
 import graphsImage from "./images/illustration-intro.svg";
 
 function App() {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 993 },
+      items: 3,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 992, min: 769 },
+      items: 2,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 768, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
+
   return (
     <div className="App">
       <div className="wrapper">
@@ -80,9 +98,82 @@ function App() {
           </div>
         </div>
 
-        {/* <div className="reviews">
+        <div className="reviews">
           <h2>What they’ve said</h2>
-        </div> */}
+          <Carousel
+            additionalTransfrom={0}
+            arrows={false}
+            autoPlay={true}
+            autoPlaySpeed={5000}
+            centerMode={false}
+            className=""
+            containerClass="container"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            renderButtonGroupOutside={true}
+            renderDotsOutside={true}
+            responsive={responsive}
+            showDots
+            sliderClass=""
+            slidesToSlide={1}
+            // swipeable
+          >
+            <div className="card">
+              <img
+                src={process.env.PUBLIC_URL + "./avatar-anisha.png"}
+                alt=""
+              />
+              <h6>Anisha Li</h6>
+              <p>
+                “Manage has supercharged our team’s workflow. The ability to
+                maintain visibility on larger milestones at all times keeps
+                everyone motivated.”
+              </p>
+            </div>
+
+            <div className="card">
+              <img src={process.env.PUBLIC_URL + "./avatar-ali.png"} alt="" />
+              <h6>Ali Bravo</h6>
+              <p>
+                “We have been able to cancel so many other subscriptions since
+                using Manage. There is no more cross-channel confusion and
+                everyone is much more focused.”
+              </p>
+            </div>
+
+            <div className="card">
+              <img
+                src={process.env.PUBLIC_URL + "./avatar-richard.png"}
+                alt=""
+              />
+              <h6>Richard Watts</h6>
+              <p>
+                “Manage allows us to provide structure and process. It keeps us
+                organized and focused. I can’t stop recommending them to
+                everyone I talk to!”
+              </p>
+            </div>
+
+            <div className="card">
+              <img
+                src={process.env.PUBLIC_URL + "./avatar-shanai.png"}
+                alt=""
+              />
+              <h6>Shanai Gough</h6>
+              <p>
+                “Their software allows us to track, manage and collaborate on
+                our projects from anywhere. It keeps the whole team in-sync
+                without being intrusive.”
+              </p>
+            </div>
+          </Carousel>
+          <button className="button">Get started</button>
+        </div>
       </div>
     </div>
   );

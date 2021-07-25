@@ -137,7 +137,11 @@ p {
     }
 
     &__item {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
       .header {
         display: flex;
         align-items: center;
@@ -164,10 +168,12 @@ p {
         }
         p {
           line-height: 1;
+          text-align: center;
         }
       }
       p {
         line-height: 1.7;
+        text-align: left;
       }
     }
   }
@@ -209,6 +215,79 @@ p {
           padding-left: 5rem;
         }
       }
+    }
+  }
+}
+
+.reviews {
+  text-align: center;
+  position: relative;
+  padding-bottom: 40px;
+  margin-top: 40px;
+
+  h2 {
+    color: $blue;
+    font-size: 2rem;
+    margin-bottom: 60px;
+  }
+
+  .card {
+    // background-color: red;
+    background-color: #fafafa;
+    height: 100%;
+    padding: 0 25px;
+    margin-top: 35px;
+
+    img {
+      width: 70px;
+      margin-top: -35px;
+    }
+
+    h6 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 25px 0;
+      color: $blue;
+    }
+
+    p {
+      line-height: 1.7;
+      padding-bottom: 40px;
+    }
+  }
+
+  .react-multi-carousel-list {
+    margin-bottom: 1rem;
+  }
+
+  .react-multi-carousel-item {
+    border-right: 10px solid white;
+    border-left: 10px solid white;
+  }
+
+  .react-multi-carousel-dot-list {
+    position: relative;
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: 992px) {
+    & {
+      margin-top: 130px;
+      padding-bottom: 175px;
+      width: 120vw;
+      margin-left: -20vw;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .react-multi-carousel-dot-list {
+      display: none;
+    }
+
+    .react-multi-carousel-list {
+      margin-bottom: 50px;
     }
   }
 }
