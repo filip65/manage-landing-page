@@ -7,12 +7,6 @@ import "react-multi-carousel/lib/styles.css";
 
 // images
 import graphsImage from "./images/illustration-intro.svg";
-import facebookIcon from "./images/icon-facebook.svg";
-import youtubeIcon from "./images/icon-youtube.svg";
-import twitterIcon from "./images/icon-twitter.svg";
-import pinterestIcon from "./images/icon-pinterest.svg";
-import instagramIcon from "./images/icon-instagram.svg";
-import logo from "./images/logo.svg";
 
 function App() {
   const responsive = {
