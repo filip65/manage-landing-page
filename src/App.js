@@ -175,6 +175,13 @@ function App() {
           <button className="button">Get started</button>
         </div>
       </div>
+
+      <div className="simplify">
+        <div className="wrapper">
+          <h2>Simplify how your team works today.</h2>
+          <button className="button inverted-button">Get started</button>
+        </div>
+      </div>
     </div>
   );
 }
