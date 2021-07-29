@@ -8,6 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 
 // images
 import graphsImage from "./images/illustration-intro.svg";
+import bgIcon from "./images/bg-tablet-pattern.svg";
 
 // form
 import { useForm } from "react-hook-form";
@@ -67,6 +68,8 @@ function App() {
 
   return (
     <div className="App">
+      <img src={bgIcon} alt="background pattern" className="bg-pattern" />
+
       <div className="wrapper">
         <Navbar />
 

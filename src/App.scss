@@ -6,9 +6,10 @@
   overflow-x: hidden;
   background-image: url("./images/bg-tablet-pattern.svg");
   background-repeat: no-repeat;
-  background-size: 110%;
+  background-size: 100%;
   background-position-y: -3%;
   background-position-x: 100px;
+  position: relative;
 
   @media (min-width: 700px) {
     background-size: 80vw;
@@ -36,6 +37,8 @@
   width: 90%;
   max-width: 1600px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1000;
 
   @media (min-width: 992px) {
     width: 80%;
@@ -44,6 +47,26 @@
 
 p {
   color: $darkBlue;
+}
+
+.bg-pattern {
+  position: absolute;
+  width: 90%;
+  right: -48%;
+  top: 490px;
+  z-index: 1;
+
+  @media (min-width: 700px) {
+    top: 450px;
+    width: 70%;
+  }
+
+  @media (min-width: 992px) {
+    width: 48%;
+    object-fit: contain;
+    top: 40%;
+    right: 80%;
+  }
 }
 
 .button {
