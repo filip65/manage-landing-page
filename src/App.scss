@@ -37,7 +37,7 @@ p {
   box-shadow: 0px 7px 16px -4px $red;
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     opacity: 0.85;
   }
 }
@@ -335,7 +335,6 @@ footer {
   position: relative;
 
   .form-wrapper {
-    text-align: center;
     margin-bottom: 60px;
 
     form {
@@ -379,6 +378,7 @@ footer {
 
     .form-error {
       color: red;
+      margin-left: 1.2rem;
     }
   }
 
@@ -516,6 +516,10 @@ footer {
           margin-right: auto;
 
           .logo {
+            margin: 0;
+          }
+
+          ul {
             margin: 0;
           }
         }

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./App.scss";
 
 import Navbar from "./Components/Navbar";
@@ -8,7 +9,44 @@ import "react-multi-carousel/lib/styles.css";
 // images
 import graphsImage from "./images/illustration-intro.svg";
 
+// form
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  email: yup
+    .string()
+    .email("Please insert a valid email")
+    .required("Email is required!"),
+});
+
 function App() {
+  const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] = useState(false);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsSuccessfullySubmitted(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [isSuccessfullySubmitted]);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    //something to do with data...
+    setIsSuccessfullySubmitted(true);
+  };
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 993 },
@@ -186,11 +224,18 @@ function App() {
       <footer>
         <div className="wrapper">
           <div className="form-wrapper">
-            <form>
-              <input type="text" placeholder="Updates in your inbox..." />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input
+                {...register("email")}
+                placeholder="Updates in your inbox..."
+              />
               <button type="submit">GO</button>
             </form>
-            <p className="form-error">toto je error</p>
+            {errors.email && (
+              <p className="form-error">{errors.email.message}</p>
+            )}
+
+            {isSuccessfullySubmitted && <p>Email saved for updates.</p>}
           </div>
 
           <div className="links">
